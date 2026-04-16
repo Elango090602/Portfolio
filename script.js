@@ -27,24 +27,28 @@
       tags: ['Power BI', 'DAX', 'SQL'],
       desc: 'Multi-source KPI dashboard for production, inventory & quality tracking. Improved ops visibility by 30%.',
       icon: 'fas fa-industry',
+      link: 'https://github.com/Elango090602/Manufracturing-Executive-Dashboard',
     },
     {
       title: 'ERP to WordPress Data Migration',
       tags: ['SQL Server', 'MySQL', 'ETL'],
       desc: 'End-to-end data mapping, ER diagrams, and post-migration validation for enterprise client.',
       icon: 'fas fa-exchange-alt',
+      link: 'https://github.com/Elango090602/SQL-Data-Analysis',
     },
     {
       title: 'Automated Data Pipeline',
       tags: ['Python', 'Pandas', 'SQL'],
       desc: 'ETL pipeline using Pandas to extract, clean, transform and load raw data. Eliminated manual reporting.',
       icon: 'fas fa-cogs',
+      link: 'https://github.com/Elango090602/Multi-source-ETL-pipeline',
     },
     {
       title: 'GoodCabs Performance Analysis',
       tags: ['SQL', 'Power BI', 'Analytics'],
       desc: 'Cohort & trip trend analysis on ride data to evaluate tier-2 city performance and retention patterns.',
       icon: 'fas fa-car',
+      link: 'https://github.com/Elango090602/Transportation-Operations-Analytics-Dashboard',
     },
   ];
 
@@ -577,8 +581,13 @@
     const col = document.createElement('div');
     col.className = 'col-lg-6';
 
-    const card = document.createElement('div');
+    const card = document.createElement('a');
+    card.href = project.link;
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
     card.className = `project-card glass-card reveal stagger-${i + 1}`;
+    card.style.textDecoration = 'none';
+    card.style.color = 'inherit';
     card.innerHTML = `
       <div class="project-card-inner">
         <div class="project-icon-wrap"><i class="${project.icon}"></i></div>
@@ -588,7 +597,7 @@
         </div>
         <p class="project-desc">${project.desc}</p>
         <div class="project-overlay">
-          <span><i class="fas fa-arrow-right"></i> View Details</span>
+          <span><i class="fab fa-github"></i> View on GitHub</span>
         </div>
       </div>
     `;
