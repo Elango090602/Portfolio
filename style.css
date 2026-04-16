@@ -1245,7 +1245,7 @@ img {
 }
 
 .timeline-content ul li::before {
-  content: 'â–¹';
+  content: '▹';
   position: absolute;
   left: 0;
   color: var(--primary-light);
