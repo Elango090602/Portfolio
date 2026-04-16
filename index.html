@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elango V — Data Analyst | BI Developer | Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Elango V — Data Analyst & BI Developer from Chennai, India. Expert in SQL, Power BI, Python, and data storytelling.">
+  <meta name="keywords" content="Data Analyst, BI Developer, SQL, Power BI, Python, Portfolio, Elango V">
+  <meta name="author" content="Elango V">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ==================== THEME TOGGLE ==================== -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <i class="fas fa-sun icon-sun"></i>
+    <i class="fas fa-moon icon-moon"></i>
+  </button>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar-custom" id="mainNavbar">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg p-0">
+        <a class="nav-brand" href="#hero">EV<span>.</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+          aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><span></span></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+          <ul class="navbar-nav align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+            <li class="nav-item"><a class="nav-link nav-cta-btn ms-lg-2" href="#contact">Let's Talk</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-gradient"></div>
+
+    <div class="container hero-content">
+      <div class="row align-items-center g-5">
+        <!-- Left: Text -->
+        <div class="col-lg-5">
+
+          <h1 class="hero-name hero-anim-2">
+            Hi, I'm <span class="gradient-text">Elango</span>
+          </h1>
+          <div class="hero-typewriter hero-anim-3">
+            <span>I'm a </span><span class="typewriter-text" id="typewriterText"></span>
+          </div>
+          <p class="hero-tagline hero-anim-4">
+            <span>&lt;</span> Turning Raw Data into Real Decisions <span>/&gt;</span>
+          </p>
+          <div class="hero-buttons hero-anim-5">
+            <a href="#projects" class="btn-glow primary">
+              <i class="fas fa-th-large"></i> View My Work
+            </a>
+            <a href="#" class="btn-glow outline" id="downloadResume">
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Interactive 3D Dashboard -->
+        <div class="col-lg-7 d-none d-lg-block">
+          <div class="dashboard-perspective hero-anim-6" id="dashboardPerspective">
+            <div class="hero-dashboard" id="heroDashboard">
+              <!-- Dashboard Header -->
+              <div class="dash-header">
+                <div class="dash-title">
+                  <i class="fas fa-chart-line"></i>
+                  <span>Analytics Overview</span>
+                </div>
+                <div class="dash-status">
+                  <span class="dash-status-dot"></span> Live
+                </div>
+              </div>
+
+              <!-- KPI Row -->
+              <div class="dash-kpi-row">
+                <div class="dash-kpi" id="kpi1">
+                  <div class="dash-kpi-icon"><i class="fas fa-dollar-sign"></i></div>
+                  <div class="dash-kpi-info">
+                    <div class="dash-kpi-value" id="kpiRevenue">$2.4M</div>
+                    <div class="dash-kpi-label">Revenue</div>
+                  </div>
+                  <div class="dash-kpi-trend up" id="kpiRevTrend"><i class="fas fa-arrow-up"></i> 12%</div>
+                </div>
+                <div class="dash-kpi" id="kpi2">
+                  <div class="dash-kpi-icon"><i class="fas fa-users"></i></div>
+                  <div class="dash-kpi-info">
+                    <div class="dash-kpi-value" id="kpiUsers">12.5K</div>
+                    <div class="dash-kpi-label">Active Users</div>
+                  </div>
+                  <div class="dash-kpi-trend up" id="kpiUserTrend"><i class="fas fa-arrow-up"></i> 8%</div>
+                </div>
+                <div class="dash-kpi" id="kpi3">
+                  <div class="dash-kpi-icon"><i class="fas fa-chart-line"></i></div>
+                  <div class="dash-kpi-info">
+                    <div class="dash-kpi-value" id="kpiGrowth">+24%</div>
+                    <div class="dash-kpi-label">Growth Rate</div>
+                  </div>
+                  <div class="dash-kpi-trend up" id="kpiGrowthTrend"><i class="fas fa-arrow-up"></i> 5%</div>
+                </div>
+              </div>
+
+              <!-- Filters -->
+              <div class="dash-filters">
+                <button class="dash-filter active" data-quarter="q1">Q1 2025</button>
+                <button class="dash-filter" data-quarter="q2">Q2 2025</button>
+                <button class="dash-filter" data-quarter="q3">Q3 2025</button>
+                <button class="dash-filter" data-quarter="q4">Q4 2025</button>
+              </div>
+
+              <!-- Charts Row -->
+              <div class="dash-charts-row">
+                <div class="dash-chart-box dash-chart-main">
+                  <div class="dash-chart-title">Monthly Performance</div>
+                  <canvas id="dashBarChart"></canvas>
+                </div>
+                <div class="dash-chart-box dash-chart-side">
+                  <div class="dash-chart-title">Traffic Source</div>
+                  <canvas id="dashDonutChart"></canvas>
+                  <div class="dash-donut-legend">
+                    <span><i class="fas fa-circle" style="color:#F59E0B;font-size:0.45rem"></i> Direct</span>
+                    <span><i class="fas fa-circle" style="color:#F97316;font-size:0.45rem"></i> Organic</span>
+                    <span><i class="fas fa-circle" style="color:#FBBF24;font-size:0.45rem"></i> Referral</span>
+                    <span><i class="fas fa-circle" style="color:#EF4444;font-size:0.45rem"></i> Social</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom Sparkline -->
+              <div class="dash-chart-box dash-chart-spark">
+                <div class="dash-spark-header">
+                  <div class="dash-chart-title">Weekly Trend</div>
+                  <div class="dash-spark-value" id="dashSparkValue">↑ 18.2%</div>
+                </div>
+                <canvas id="dashLineChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator hero-anim-6">
+      <div class="scroll-mouse"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about" class="section">
+    <!-- Parallax decorations -->
+    <div class="parallax-el floating-code" data-speed="0.03" data-direction="y" style="top:10%;right:8%;">SELECT * FROM
+      insights</div>
+    <div class="parallax-el floating-ring" data-speed="-0.04" data-direction="y" style="bottom:15%;left:5%;"></div>
+
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Data-Driven Problem <span class="highlight">Solver</span></h2>
+        <p class="section-subtitle">Passionate about transforming raw data into actionable insights that drive business
+          decisions.</p>
+      </div>
+
+      <div class="row g-4 align-items-start">
+        <!-- Text + Stats -->
+        <div class="col-lg-6 reveal-left">
+          <div class="glass-card">
+            <p class="about-text">
+              <span>I'm a <span class="emphasis">Data Analyst & BI Developer</span> based in Chennai, India, with 1+
+                years of hands-on experience building dashboards, writing complex SQL queries, and automating data
+                workflows.</span>
+            </p>
+            <p class="about-text">
+              <span>My toolkit includes <span class="emphasis">SQL, Python, Power BI, and Excel</span> — I use them to
+                help organizations make smarter decisions faster by turning messy, multi-source data into clean, visual,
+                actionable intelligence.</span>
+            </p>
+            <p class="about-text">
+              <span>I'm also passionate about teaching data analytics to freshers — helping thousands start their
+                journey with <span class="emphasis">real skills and real projects</span>.</span>
+            </p>
+
+            <div class="row g-3 mt-3 about-stats">
+              <div class="col-4">
+                <div class="stat-card reveal stagger-1">
+                  <span class="stat-number" data-count="1">0</span>
+                  <div class="stat-label">Years Exp</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-card reveal stagger-2">
+                  <span class="stat-number" data-count="10">0</span>
+                  <div class="stat-label">Projects</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-card reveal stagger-3">
+                  <span class="stat-number" data-count="50000">0</span>
+                  <div class="stat-label">Students</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Radar Chart -->
+        <div class="col-lg-6 reveal-right">
+          <div class="glass-card about-chart-card">
+            <canvas id="skillsRadar"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section id="skills" class="section">
+    <div class="parallax-el floating-square" data-speed="0.05" data-direction="rotate" style="top:12%;left:10%;"></div>
+    <div class="parallax-el floating-code" data-speed="-0.025" data-direction="y" style="bottom:10%;right:6%;">import
+      pandas as pd</div>
+
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Tech Stack</div>
+        <h2 class="section-title">Tools & <span class="highlight">Technologies</span></h2>
+        <p class="section-subtitle">The arsenal I use to turn raw data into real impact.</p>
+      </div>
+
+      <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-7 g-3" id="skillsGrid">
+        <!-- Dynamically filled by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section id="projects" class="section">
+    <div class="parallax-el floating-ring" data-speed="0.035" data-direction="y"
+      style="top:8%;right:12%;width:100px;height:100px;"></div>
+
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Portfolio</div>
+        <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+        <p class="section-subtitle">Real projects solving real problems — no toy datasets.</p>
+      </div>
+
+      <div class="row g-4" id="projectsGrid">
+        <!-- Dynamically filled by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE ==================== -->
+  <section id="experience" class="section">
+    <div class="parallax-el floating-code" data-speed="0.04" data-direction="y" style="top:18%;left:6%;">GROUP BY growth
+    </div>
+    <div class="parallax-el floating-square" data-speed="-0.03" data-direction="rotate" style="bottom:20%;right:8%;">
+    </div>
+
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Journey</div>
+        <h2 class="section-title">Work <span class="highlight">Experience</span></h2>
+        <p class="section-subtitle">My professional journey in the data world.</p>
+      </div>
+
+      <div class="timeline-wrap">
+        <div class="timeline-item reveal stagger-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-date">Mar 2025 — Present</div>
+            <h3>BI & Data Analyst</h3>
+            <h4>Binary Waves Solutions</h4>
+            <ul>
+              <li>Developing end-to-end Power BI dashboards for manufacturing operations, driving 30% improvement in ops
+                visibility</li>
+              <li>Designing ETL pipelines and automating data workflows using Python and SQL to eliminate manual
+                reporting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal stagger-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-date">Jan 2024 — Apr 2024</div>
+            <h3>Data Analyst Intern</h3>
+            <h4>Ingage Technologies</h4>
+            <ul>
+              <li>Built performance dashboards tracking 50,000+ students across 200 colleges using Looker Studio</li>
+              <li>Reduced reporting time by 40% through automated data pipelines and standardized KPI frameworks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ACHIEVEMENTS ==================== -->
+  <section id="achievements" class="section">
+    <div class="parallax-el floating-ring" data-speed="-0.05" data-direction="y" style="top:20%;right:5%;"></div>
+
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Recognition</div>
+        <h2 class="section-title">Achievements & <span class="highlight">Certifications</span></h2>
+      </div>
+
+      <div class="row g-4">
+        <!-- Achievements -->
+        <div class="col-lg-6 reveal-left">
+          <div class="achieve-column">
+            <h3><i class="fas fa-trophy"></i> Achievements</h3>
+
+            <div class="achieve-item">
+              <div class="achieve-icon"><i class="fas fa-medal"></i></div>
+              <div>
+                <h4>1st Place — Web Design Competition</h4>
+                <p>MNM Jain Engineering College</p>
+              </div>
+            </div>
+
+            <div class="achieve-item">
+              <div class="achieve-icon"><i class="fas fa-star"></i></div>
+              <div>
+                <h4>Top 10 Finalist — IIT Madras Hackathon</h4>
+                <p>Competed against 500+ teams nationwide</p>
+              </div>
+            </div>
+
+            <div class="achieve-item">
+              <div class="achieve-icon"><i class="fas fa-code"></i></div>
+              <div>
+                <h4>Organized Codeathon</h4>
+                <p>Intercollege coding competition coordinator</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="col-lg-6 reveal-right">
+          <div class="achieve-column">
+            <h3><i class="fas fa-certificate"></i> Certifications</h3>
+
+            <a href="https://www.credential.net/profile/elangov382076/wallet" target="_blank" class="achieve-item">
+              <div class="achieve-icon"><i class="fas fa-fire" style="color:#FF3621;"></i></div>
+              <div>
+                <h4>Databricks Fundamentals</h4>
+                <p>Databricks Academy</p>
+              </div>
+            </a>
+
+            <a href="https://www.credential.net/profile/elangov382076/wallet" target="_blank" class="achieve-item">
+              <div class="achieve-icon"><i class="fas fa-chart-bar" style="color:#F2C811;"></i></div>
+              <div>
+                <h4>Power BI DAX</h4>
+                <p>LinkedIn Learning</p>
+              </div>
+            </a>
+
+            <a href="https://www.credential.net/profile/elangov382076/wallet" target="_blank" class="achieve-item">
+              <div class="achieve-icon"><i class="fas fa-database" style="color:#4FC3F7;"></i></div>
+              <div>
+                <h4>Advanced SQL</h4>
+                <p>LinkedIn Learning</p>
+              </div>
+            </a>
+
+            <a href="https://www.credential.net/profile/elangov382076/wallet" target="_blank" class="achieve-item">
+              <div class="achieve-icon"><i class="fab fa-python" style="color:#3776AB;"></i></div>
+              <div>
+                <h4>Data Analysis with Python</h4>
+                <p>Coursera</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Let's Build Something <span class="highlight">Together</span></h2>
+        <p class="section-subtitle">Have a project in mind or want to collaborate? I'm always open to new opportunities.
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-6 reveal-left">
+          <form class="contact-form" id="contactForm" novalidate>
+            <!-- Web3Forms access key — get yours free at web3forms.com -->
+            <input type="hidden" name="access_key" value="0d894fd9-67da-4c55-af59-f047f4cfd713">
+            <input type="hidden" name="subject" value="New message from Portfolio — elangov9602@gmail.com">
+            <input type="hidden" name="from_name" value="Portfolio Contact Form">
+            <div class="mb-3">
+              <input type="text" class="form-control" id="contactName" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" id="contactEmail" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" id="contactMessage" name="message" placeholder="Your Message"
+                required></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="formSubmitBtn">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <div id="formStatus" class="form-status" style="display:none;"></div>
+          </form>
+        </div>
+
+        <div class="col-lg-5 offset-lg-1 reveal-right">
+          <div class="d-flex flex-column gap-2">
+            <a href="mailto:elangov9602@gmail.com" class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h4>Email</h4>
+                <p>elangov9602@gmail.com</p>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/" target="_blank" class="contact-item">
+              <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div>
+                <h4>LinkedIn</h4>
+                <p>Connect with me</p>
+              </div>
+            </a>
+            <a href="https://github.com/Elango090602" target="_blank" class="contact-item">
+              <div class="contact-icon"><i class="fab fa-github"></i></div>
+              <div>
+                <h4>GitHub</h4>
+                <p>Check out my repos</p>
+              </div>
+            </a>
+            <a href="https://www.instagram.com/w_e_i_r_d_o_0/" target="_blank" class="contact-item">
+              <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+              <div>
+                <h4>Instagram</h4>
+                <p>@datawithelango</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <p>Built with passion by <span class="footer-brand">Elango V</span></p>
+      <ul class="footer-links">
+        <li><a href="mailto:elangov9602@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+        <li><a href="https://linkedin.com/in/" target="_blank" aria-label="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="https://github.com/Elango090602" target="_blank" aria-label="GitHub"><i
+              class="fab fa-github"></i></a></li>
+        <li><a href="https://www.instagram.com/w_e_i_r_d_o_0/" target="_blank" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
