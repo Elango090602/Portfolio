@@ -240,32 +240,36 @@
      ============================================ */
   const quarterData = {
     q1: {
-      bar: { labels: ['Jan', 'Feb', 'Mar'], revenue: [42, 58, 65], costs: [28, 35, 40] },
-      kpi: { revenue: '$2.4M', users: '12.5K', growth: '+24%', revTrend: '12%', userTrend: '8%', growthTrend: '5%' },
-      donut: [35, 28, 22, 15],
-      line: [28, 35, 42, 38, 52, 48, 58],
-      sparkValue: '↑ 18.2%'
+      // All Skills
+      bar: { labels: ['SQL', 'Power BI', 'Python', 'Excel', 'ETL', 'Data Viz'], revenue: [92, 90, 78, 88, 80, 88], costs: [85, 82, 70, 80, 72, 80] },
+      kpi: { revenue: '10+', users: '50K+', growth: '87%', revTrend: 'New', userTrend: 'Growing', growthTrend: '4 Certs' },
+      donut: [40, 25, 20, 15],
+      line: [30, 45, 55, 60, 72, 80, 87],
+      sparkValue: '↑ 4 Certs'
     },
     q2: {
-      bar: { labels: ['Apr', 'May', 'Jun'], revenue: [55, 72, 68], costs: [32, 42, 38] },
-      kpi: { revenue: '$3.1M', users: '15.8K', growth: '+31%', revTrend: '18%', userTrend: '12%', growthTrend: '7%' },
-      donut: [30, 32, 20, 18],
-      line: [38, 45, 52, 48, 62, 55, 68],
-      sparkValue: '↑ 24.5%'
+      // BI Tools
+      bar: { labels: ['Power BI', 'Tableau', 'Excel', 'Data Viz'], revenue: [90, 72, 88, 88], costs: [82, 65, 80, 80] },
+      kpi: { revenue: '5+', users: '30K+', growth: '85%', revTrend: 'Active', userTrend: 'Dashboards', growthTrend: '2 Certs' },
+      donut: [45, 15, 25, 15],
+      line: [40, 50, 58, 65, 75, 82, 90],
+      sparkValue: '↑ Power BI'
     },
     q3: {
-      bar: { labels: ['Jul', 'Aug', 'Sep'], revenue: [62, 78, 85], costs: [35, 45, 48] },
-      kpi: { revenue: '$3.8M', users: '18.2K', growth: '+28%', revTrend: '22%', userTrend: '15%', growthTrend: '8%' },
-      donut: [28, 35, 18, 19],
-      line: [48, 55, 62, 58, 72, 68, 78],
-      sparkValue: '↑ 21.3%'
+      // Languages
+      bar: { labels: ['SQL', 'Python', 'DAX', 'M Query'], revenue: [92, 78, 82, 65], costs: [85, 70, 75, 58] },
+      kpi: { revenue: '4', users: '20K+', growth: '79%', revTrend: 'Core', userTrend: 'Trained', growthTrend: '2 Certs' },
+      donut: [35, 30, 20, 15],
+      line: [35, 48, 55, 62, 68, 75, 79],
+      sparkValue: '↑ SQL Expert'
     },
     q4: {
-      bar: { labels: ['Oct', 'Nov', 'Dec'], revenue: [75, 92, 105], costs: [42, 52, 58] },
-      kpi: { revenue: '$4.5M', users: '22.1K', growth: '+35%', revTrend: '28%', userTrend: '18%', growthTrend: '10%' },
-      donut: [32, 30, 22, 16],
-      line: [58, 68, 75, 72, 85, 82, 92],
-      sparkValue: '↑ 29.8%'
+      // Data Eng
+      bar: { labels: ['ETL', 'Pandas', 'Azure', 'Databricks'], revenue: [80, 75, 60, 55], costs: [72, 68, 52, 48] },
+      kpi: { revenue: '3+', users: '10K+', growth: '68%', revTrend: 'Pipelines', userTrend: 'Automated', growthTrend: '1 Cert' },
+      donut: [20, 40, 25, 15],
+      line: [25, 35, 42, 48, 55, 62, 68],
+      sparkValue: '↑ ETL Pro'
     }
   };
 
@@ -296,7 +300,7 @@
         labels: quarterData.q1.bar.labels,
         datasets: [
           {
-            label: 'Revenue',
+            label: 'Proficiency',
             data: quarterData.q1.bar.revenue,
             backgroundColor: 'rgba(245, 158, 11, 0.7)',
             borderColor: '#F59E0B',
@@ -305,7 +309,7 @@
             borderSkipped: false,
           },
           {
-            label: 'Costs',
+            label: 'Experience',
             data: quarterData.q1.bar.costs,
             backgroundColor: 'rgba(249, 115, 22, 0.5)',
             borderColor: '#F97316',
@@ -340,7 +344,7 @@
     dashDonutChart = new Chart(donutCtx.getContext('2d'), {
       type: 'doughnut',
       data: {
-        labels: ['Direct', 'Organic', 'Referral', 'Social'],
+        labels: ['BI Dashboard', 'Data Eng', 'Analytics', 'SQL'],
         datasets: [{
           data: quarterData.q1.donut,
           backgroundColor: ['#F59E0B', '#F97316', '#FBBF24', '#EF4444'],
@@ -374,7 +378,7 @@
     dashLineChart = new Chart(lineCtx.getContext('2d'), {
       type: 'line',
       data: {
-        labels: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7'],
+        labels: ['Jan', 'Mar', 'May', 'Jul', 'Sep', 'Nov', 'Now'],
         datasets: [{
           data: quarterData.q1.line,
           borderColor: '#F59E0B',

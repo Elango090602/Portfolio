@@ -91,7 +91,7 @@
               <div class="dash-header">
                 <div class="dash-title">
                   <i class="fas fa-chart-line"></i>
-                  <span>Analytics Overview</span>
+                  <span>Portfolio Overview</span>
                 </div>
                 <div class="dash-status">
                   <span class="dash-status-dot"></span> Live
@@ -101,53 +101,53 @@
               <!-- KPI Row -->
               <div class="dash-kpi-row">
                 <div class="dash-kpi" id="kpi1">
-                  <div class="dash-kpi-icon"><i class="fas fa-dollar-sign"></i></div>
+                  <div class="dash-kpi-icon"><i class="fas fa-project-diagram"></i></div>
                   <div class="dash-kpi-info">
-                    <div class="dash-kpi-value" id="kpiRevenue">$2.4M</div>
-                    <div class="dash-kpi-label">Revenue</div>
+                    <div class="dash-kpi-value" id="kpiRevenue">10+</div>
+                    <div class="dash-kpi-label">Projects</div>
                   </div>
-                  <div class="dash-kpi-trend up" id="kpiRevTrend"><i class="fas fa-arrow-up"></i> 12%</div>
+                  <div class="dash-kpi-trend up" id="kpiRevTrend"><i class="fas fa-arrow-up"></i> New</div>
                 </div>
                 <div class="dash-kpi" id="kpi2">
                   <div class="dash-kpi-icon"><i class="fas fa-users"></i></div>
                   <div class="dash-kpi-info">
-                    <div class="dash-kpi-value" id="kpiUsers">12.5K</div>
-                    <div class="dash-kpi-label">Active Users</div>
+                    <div class="dash-kpi-value" id="kpiUsers">50K+</div>
+                    <div class="dash-kpi-label">Students Taught</div>
                   </div>
-                  <div class="dash-kpi-trend up" id="kpiUserTrend"><i class="fas fa-arrow-up"></i> 8%</div>
+                  <div class="dash-kpi-trend up" id="kpiUserTrend"><i class="fas fa-arrow-up"></i> Growing</div>
                 </div>
                 <div class="dash-kpi" id="kpi3">
-                  <div class="dash-kpi-icon"><i class="fas fa-chart-line"></i></div>
+                  <div class="dash-kpi-icon"><i class="fas fa-star"></i></div>
                   <div class="dash-kpi-info">
-                    <div class="dash-kpi-value" id="kpiGrowth">+24%</div>
-                    <div class="dash-kpi-label">Growth Rate</div>
+                    <div class="dash-kpi-value" id="kpiGrowth">87%</div>
+                    <div class="dash-kpi-label">Avg Skill Level</div>
                   </div>
-                  <div class="dash-kpi-trend up" id="kpiGrowthTrend"><i class="fas fa-arrow-up"></i> 5%</div>
+                  <div class="dash-kpi-trend up" id="kpiGrowthTrend"><i class="fas fa-arrow-up"></i> 4 Certs</div>
                 </div>
               </div>
 
               <!-- Filters -->
               <div class="dash-filters">
-                <button class="dash-filter active" data-quarter="q1">Q1 2025</button>
-                <button class="dash-filter" data-quarter="q2">Q2 2025</button>
-                <button class="dash-filter" data-quarter="q3">Q3 2025</button>
-                <button class="dash-filter" data-quarter="q4">Q4 2025</button>
+                <button class="dash-filter active" data-quarter="q1">All Skills</button>
+                <button class="dash-filter" data-quarter="q2">BI Tools</button>
+                <button class="dash-filter" data-quarter="q3">Languages</button>
+                <button class="dash-filter" data-quarter="q4">Data Eng</button>
               </div>
 
               <!-- Charts Row -->
               <div class="dash-charts-row">
                 <div class="dash-chart-box dash-chart-main">
-                  <div class="dash-chart-title">Monthly Performance</div>
+                  <div class="dash-chart-title">Skill Proficiency</div>
                   <canvas id="dashBarChart"></canvas>
                 </div>
                 <div class="dash-chart-box dash-chart-side">
-                  <div class="dash-chart-title">Traffic Source</div>
+                  <div class="dash-chart-title">Project Distribution</div>
                   <canvas id="dashDonutChart"></canvas>
                   <div class="dash-donut-legend">
-                    <span><i class="fas fa-circle" style="color:#F59E0B;font-size:0.45rem"></i> Direct</span>
-                    <span><i class="fas fa-circle" style="color:#F97316;font-size:0.45rem"></i> Organic</span>
-                    <span><i class="fas fa-circle" style="color:#FBBF24;font-size:0.45rem"></i> Referral</span>
-                    <span><i class="fas fa-circle" style="color:#EF4444;font-size:0.45rem"></i> Social</span>
+                    <span><i class="fas fa-circle" style="color:#F59E0B;font-size:0.45rem"></i> BI Dashboard</span>
+                    <span><i class="fas fa-circle" style="color:#F97316;font-size:0.45rem"></i> Data Eng</span>
+                    <span><i class="fas fa-circle" style="color:#FBBF24;font-size:0.45rem"></i> Analytics</span>
+                    <span><i class="fas fa-circle" style="color:#EF4444;font-size:0.45rem"></i> SQL</span>
                   </div>
                 </div>
               </div>
@@ -155,8 +155,8 @@
               <!-- Bottom Sparkline -->
               <div class="dash-chart-box dash-chart-spark">
                 <div class="dash-spark-header">
-                  <div class="dash-chart-title">Weekly Trend</div>
-                  <div class="dash-spark-value" id="dashSparkValue">↑ 18.2%</div>
+                  <div class="dash-chart-title">Learning Growth</div>
+                  <div class="dash-spark-value" id="dashSparkValue">↑ 4 Certs</div>
                 </div>
                 <canvas id="dashLineChart"></canvas>
               </div>
