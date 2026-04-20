@@ -866,4 +866,22 @@
       formSubmitBtn.disabled = false;
     }
   });
+
+  /* ============================================
+     PRELOADER
+     ============================================ */
+  window.addEventListener('load', () => {
+    // Artificial delay to showcase the smooth preloader animation
+    setTimeout(() => {
+      document.body.classList.add('loaded');
+      
+      // Remove preloader DOM element after the animations complete
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          preloader.remove();
+        }
+      }, 1500);
+    }, 1200); 
+  });
 })();
