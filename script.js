@@ -7,6 +7,17 @@
   }
   window.scrollTo(0, 0);
 
+
+
+  /* ============================================
+     TEXT LINE REVEALS (Awwwards Style)
+     ============================================ */
+  document.querySelectorAll('.section-title, .section-label, .section-subtitle, .hero-name, .hero-tagline').forEach(el => {
+    // Preserve any existing inner HTML structure (e.g. highlights)
+    const text = el.innerHTML;
+    el.innerHTML = `<span class="reveal-text-mask" style="display: block;"><span class="reveal-text-inner" style="display: block;">${text}</span></span>`;
+  });
+
   /* ============================================
      DATA
      ============================================ */
