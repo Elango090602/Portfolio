@@ -689,12 +689,45 @@
     });
   }
 
+  const radarOriginalData = [92, 90, 78, 88, 80, 88, 92, 85];
+  let radarInterval;
+  
   const aboutObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           animateCounters();
-          aboutObserver.unobserve(entry.target);
+          
+          // Animate Radar Chart initially
+          radarChart.data.datasets[0].data = [...radarOriginalData];
+          radarChart.update();
+
+          // Start dynamic shape shifting
+          if (!radarInterval) {
+            radarInterval = setInterval(() => {
+              const newData = radarOriginalData.map(() => {
+                // Massive random flux between 25 and 100 for a wild shape-shifting effect
+                return Math.floor(Math.random() * 75) + 25;
+              });
+              radarChart.data.datasets[0].data = newData;
+              radarChart.update();
+            }, 2000); // morphs drastically every 2 seconds
+          }
+        } else {
+          // Reset counters
+          document.querySelectorAll('.stat-number[data-count]').forEach((counter) => {
+            counter.textContent = '0+';
+          });
+          
+          // Stop dynamic shape shifting
+          if (radarInterval) {
+            clearInterval(radarInterval);
+            radarInterval = null;
+          }
+
+          // Reset Radar Chart
+          radarChart.data.datasets[0].data = [0, 0, 0, 0, 0, 0, 0, 0];
+          radarChart.update('none'); // Update without animation so it resets instantly in background
         }
       });
     },
