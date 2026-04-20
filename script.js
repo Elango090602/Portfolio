@@ -1,6 +1,12 @@
 (function () {
   'use strict';
 
+  // Ensure scroll position resets to the top (Hero Section) on every page refresh
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+
   /* ============================================
      DATA
      ============================================ */
