@@ -194,22 +194,6 @@
     mouseY = e.clientY;
   });
 
-  // Pause canvas when hero is not in view
-  const heroSection = document.getElementById('hero');
-  const heroObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          cancelAnimationFrame(heroAnimId);
-        } else {
-          animateHeroCanvas();
-        }
-      });
-    },
-    { threshold: 0.05 }
-  );
-  heroObserver.observe(heroSection);
-
   /* ============================================
      HERO DASHBOARD — 3D TILT EFFECT
      ============================================ */
@@ -721,24 +705,11 @@
   /* ============================================
      SCROLL REVEAL — Bouncy Spring Animations
      ============================================ */
-  function handleScrollReveal() {
-    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-    const windowH = window.innerHeight;
-
-    reveals.forEach((el) => {
-      const top = el.getBoundingClientRect().top;
-      const triggerPoint = windowH * 0.82; // trigger earlier
-      if (top < triggerPoint) {
-        el.classList.add('active');
-      }
-    });
-  }
-
-  // IntersectionObserver for buttery smooth reveal
+  // IntersectionObserver for buttery smooth and repeatable reveal
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
+      const el = entry.target;
       if (entry.isIntersecting) {
-        const el = entry.target;
         // Add dynamic stagger based on sibling index
         const siblings = el.parentElement
           ? Array.from(el.parentElement.children).filter(c =>
@@ -753,20 +724,21 @@
           el.style.transitionDelay = `${idx * 0.08}s`;
         }
         el.classList.add('active');
-        revealObserver.unobserve(el);
+      } else {
+        // Remove class for continuous animation on scroll up and down
+        el.classList.remove('active');
+        // Optional: Reset transition delay so stagger plays cleanly every time
+        el.style.transitionDelay = '';
       }
     });
   }, {
     threshold: 0.1,
-    rootMargin: '0px 0px -60px 0px'
+    rootMargin: '0px 0px -50px 0px'
   });
 
   document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach((el) => {
     revealObserver.observe(el);
   });
-
-  window.addEventListener('scroll', handleScrollReveal, { passive: true });
-  window.addEventListener('load', handleScrollReveal);
 
   /* ============================================
      PARALLAX ON SCROLL
