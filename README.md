@@ -67,4 +67,4 @@ The goal of this portfolio is to:
 ## Author
 **Elango V**
 
-Built with passion to showcase my journey in data analytics and business intelligence. :contentReference[oaicite:9]{index=9}
+Built with passion to showcase my journey in data analytics and business intelligence.
